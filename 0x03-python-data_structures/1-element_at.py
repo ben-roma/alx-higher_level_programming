@@ -13,7 +13,7 @@ def element_at(my_list, idx):
         None if the index is out of range or negative.
     """
 
-    if idx < 0 or idx > len(my_list) - 1:
+    if idx < 0 or idx >= len(my_list):
         return None  # Return None for invalid indices
     else:
-        return my_list[idx]  # Access and return the element
+        return (my_list[idx])  # Access and return the element
