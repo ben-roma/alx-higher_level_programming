@@ -7,9 +7,9 @@ def print_matrix_integer(matrix=[[]]):
         matrix: A list of lists representing the matrix.
     """
 
-    for row in matrix:  # Iterate through each row
-        for element in row:  # Iterate through each element in the row
-            print("{:d} ".format(element), end="")
-            # Print the element with a space
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if j != 0:
+                print(" ", end='')
+            print("{:d}".format(matrix[i][j]), end='')
         print()
-        # Move to the next line after each row
