@@ -1,4 +1,4 @@
-#!/usr/python
+#!/usr/python3
 
 def element_at(my_list, idx):
     """Retrieves an element from a list, handling out-of-range
