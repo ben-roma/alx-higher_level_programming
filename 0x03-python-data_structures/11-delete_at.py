@@ -11,9 +11,6 @@ def delete_at(my_list=[], idx=0):
     Returns:
         A new list with the item at the specified index removed.
     """
-
-    if 0 <= idx < len(my_list):  # Check for valid index
-        return my_list[:idx] + my_list[idx+1:]
-        # Reconstruct list without the element at idx
-    else:
-        return my_list  # Return original list if index is invalid
+    if idx >= 0 and idx < len(my_list):
+        del my_list[idx]
+    return my_list
