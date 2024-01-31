@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""square"""
+"""Square class"""
+
 
 class Square():
-    """Classe vide Square qui définit un carré."""
+    """Empty class created by program"""
     pass
