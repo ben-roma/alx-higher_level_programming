@@ -2,12 +2,13 @@
 
 def magic_calculation(a, b):
     result = 0
-    for i in range(1, 4):
-        if i > a:
-            break
+    for x in range(1, 3):
         try:
-            result += a ** b / i
-        except Exception as err:
-            print("Exception:", err, file=sys.stderr)
-            return None
-    return result
+            if x > a:
+                raise Exception('Too far')
+            else:
+                result += a ** b / x
+        except Exception:
+            result = b + a
+            break
+    return (result)
