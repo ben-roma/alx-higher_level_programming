@@ -1,22 +1,36 @@
 #!/usr/bin/python3
 """
-Module 4-inherits_from.
-Defines a function that checks if an object is an instance of a class
-that inherited (directly or indirectly) from the specified class.
+Module 10-square.
+Extends the Rectangle class from 9-rectangle.py with a Square class.
 """
 
+Rectangle = __import__('9-rectangle').Rectangle
 
-def inherits_from(obj, a_class):
+
+class Square(Rectangle):
     """
-    Check if an object is an instance of a class that inherited
-    (directly or indirectly) from the specified class.
-
-    Args:
-        obj: The object to check.
-        a_class: The class to match the inheritance against.
-
-    Returns:
-        True if obj is an instance of a class that inherited from a_class;
-        False otherwise.
+    Inherits from Rectangle and represents a square.
     """
-    return isinstance(obj, a_class) and type(obj) is not a_class
+
+    def __init__(self, size):
+        """
+        Initializes a Square instance, validating size as a positive integer.
+
+        Args:
+            size (int): The size of the sides of the square.
+        """
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+        self.__size = size
+
+    def area(self):
+        """
+        Returns the area of the square.
+        """
+        return self.__size ** 2
+
+    def __str__(self):
+        """
+        Returns the square description.
+        """
+        return f"[Rectangle] {self.__size}/{self.__size}"
