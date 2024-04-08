@@ -2,7 +2,7 @@
 const { argv } = require('process');
 
 function add(a, b) {
-  return a + b;
+	return a + b;
 }
 
 const num1 = parseInt(argv[2], 10);
