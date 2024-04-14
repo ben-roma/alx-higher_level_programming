@@ -43,5 +43,3 @@ def main():
 if __name__ == "__main__":
     if len(argv) == 4:
         main()
-    else:
-        print("Usage: ./0-select_states.py <mysql username> <mysql password> <database name>")
