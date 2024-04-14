@@ -1,36 +1,28 @@
 #!/usr/bin/python3
 """
-This script lists all states from the
-<<<<<<< HEAD
-database `hbtn_0e_0_usa`.
-=======
-database
->>>>>>> e7b340de4c071690d3296e63e3d997730af036f3
+Module 0-select_states.py
+Script that lists all states from the database hbtn_0e_0_usa.
 """
 
 import MySQLdb
 import sys
 
-if __name__ == '__main__':
+
+def list_states(username, password, dbname):
     """
-    Access to the database and get the states
-    from the database.
+    Lists all states from the database in ascending order by states.id.
     """
-<<<<<<< HEAD
-    db_connect = MySQLdb.connect(
-        host="localhost", user=argv[1], port=3306, passwd=argv[2], db=argv[3])
-
-    db_cursor = db_connect.cursor()
-
-    db_cursor.execute("SELECT * FROM states")
-
-    rows_selected = db_cursor.fetchall()
-
-    for row in rows_selected:
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=username, passwd=password, db=dbname)
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cur.fetchall()
+    for row in rows:
         print(row)
-=======
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-    c = db.cursor()
-    c.execute("SELECT * FROM `states`")
-    [print(state) for state in c.fetchall()]
->>>>>>> e7b340de4c071690d3296e63e3d997730af036f3
+    cur.close()
+    db.close()
+
+
+if __name__ == "__main__":
+    if len(sys.argv) == 4:
+        list_states(sys.argv[1], sys.argv[2], sys.argv[3])
