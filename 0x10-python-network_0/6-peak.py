@@ -3,7 +3,7 @@
 
 
 def find_peak(list_of_integers):
-    """Finds a peak in a list of unsorted integers."""
+    """Find a peak in a list of unsorted integers."""
     if not list_of_integers:
         return None
 
@@ -12,9 +12,10 @@ def find_peak(list_of_integers):
 
     while low <= high:
         mid = (low + high) // 2
-        if (mid == 0 or list_of_integers[mid - 1]
-            <= list_of_integers[mid]) and \
-           (mid == len(list_of_integers) - 1 or list_of_integers[mid + 1] <= list_of_integers[mid]):
+        # Adjusting indentation for the following lines
+        if ((mid == 0 or list_of_integers[mid - 1] <= list_of_integers[mid])
+                and (mid == len(list_of_integers) - 1 or
+                     list_of_integers[mid + 1] <= list_of_integers[mid])):
             return list_of_integers[mid]
         if mid > 0 and list_of_integers[mid - 1] > list_of_integers[mid]:
             high = mid - 1
